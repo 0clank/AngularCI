@@ -1,8 +1,9 @@
 const config = require('./protractor.conf').config;
 config.capabilities = {
-  browserName: 'chrome',
-  chromeOptions: {
-    args: ['--headless', '--no-sandbox']
-  }
+  browserName: 'firefox',
+
+  'moz:firefoxOptions': {
+     args: [ "--headless" ]
+   }
 };
 exports.config = config;
