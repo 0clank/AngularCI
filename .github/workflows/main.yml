@@ -23,8 +23,8 @@ jobs:
       run: |
         npm uninstall protractor
         npm install --save-dev protractor
-        ./node_modules/.bin/webdriver-manager update --versions.chrome=2.44
-        ./node_modules/.bin/webdriver-manager start --versions.chrome=2.44 --detach
+        ./node_modules/.bin/webdriver-manager update --versions.chrome=79.0.3945.88
+        ./node_modules/.bin/webdriver-manager start --versions.chrome=79.0.3945.88 --detach
         npm run e2e --protractor -config=e2e/protractor-ci.conf.js
     - name: Build
       run: npm run build -- --prod
