@@ -20,6 +20,6 @@ jobs:
     - name: Jasmine
       run: npm test -- --watch false --browsers ChromeHeadless
     - name: Protractor
-      run: npm run e2e --protractor
+      run: npm run e2e -- --no-progress --config=protractor-ci.conf.js
     - name: Build
       run: npm run build -- --prod
