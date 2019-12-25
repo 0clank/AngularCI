@@ -24,6 +24,7 @@ jobs:
       run: npm test -- --watch false --browsers ChromeHeadless
     - name: Protractor
       run: |
+        ./node_modules/.bin/webdriver-manager update
         npm run e2e
     - name: Build
       run: npm run build -- --prod
