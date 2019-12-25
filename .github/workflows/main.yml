@@ -22,6 +22,6 @@ jobs:
     - name: Protractor
       run: |
         ./node_modules/.bin/webdriver-manager update
-        npm run e2e -- --config=protractor-ci.conf.js
+        npm run e2e -- -config=protractor-ci.conf.js
     - name: Build
       run: npm run build -- --prod
