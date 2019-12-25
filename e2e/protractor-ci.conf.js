@@ -3,7 +3,7 @@
     config.capabilities = {
         browserName: 'chrome',
         chromeOptions: {
-            args: ['--headless', '--no-sandbox', '--disable-dev-shm-usage']
+            args: ['--headless', '--disable-gpu', '--no-sandbox', '--disable-dev-shm-usage']
         }
     };
 
