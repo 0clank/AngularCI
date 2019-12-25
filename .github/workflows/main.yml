@@ -14,10 +14,7 @@ jobs:
       with:
         node-version: 12.8
     - name: Install dependencies
-      run: | 
-        npm i -D webdriver-manager
-        rm -rf node_modules
-        npm install
+      run: npm install
     - name: Lint
       run: npm run lint
     - name: Jasmine
