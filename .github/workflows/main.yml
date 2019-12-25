@@ -1,0 +1,27 @@
+name: Angular CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Use Node.js 12.8
+      uses: actions/setup-node@v1
+      with:
+        node-version: 12.8
+    - name: Install dependencies
+      run: npm install
+    - name: Lint
+      run: npm run lint
+    - name: Jasmine
+      run: npm test -- --watch false --browsers ChromeHeadless
+    - name: Protractor
+      run: |
+        ./node_modules/protractor/bin/webdriver-manager update
+        npm run e2e
+    - name: Build
+      run: npm run build -- --prod
