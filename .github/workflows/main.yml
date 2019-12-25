@@ -14,17 +14,16 @@ jobs:
       with:
         node-version: 12.8
     - name: Install dependencies
-      run: npm install
+      run: | 
+        npm i -D webdriver-manager
+        rm -rf node_modules
+        npm install
     - name: Lint
       run: npm run lint
     - name: Jasmine
       run: npm test -- --watch false --browsers ChromeHeadless
     - name: Protractor
       run: |
-        npm uninstall protractor
-        npm install --save-dev protractor
-        ./node_modules/.bin/webdriver-manager update --versions.chrome=79.0.3945.88
-        ./node_modules/.bin/webdriver-manager start --versions.chrome=79.0.3945.88 --detach
         npm run e2e --protractor -config=e2e/protractor-ci.conf.js
     - name: Build
       run: npm run build -- --prod
